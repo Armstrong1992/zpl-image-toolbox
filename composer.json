@@ -1,0 +1,36 @@
+{
+  "type": "library",
+  "license": "GPL-3.0-only",
+  "name": "armstrong1992/zpl-image-toolbox",
+  "description": "A library for interacting with images contained in ZPL labels",
+  "keywords": [
+    "zpl",
+    "image",
+    "Z64"
+  ],
+  "authors": [
+    {
+      "name": "Paweł Smok",
+      "homepage": "https://armstrong.net.pl"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Armstrong1992/zpl-image-toolbox/issues"
+  },
+  "require": {
+    "php": ">=8.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11"
+  },
+  "autoload": {
+    "psr-4": {
+      "Armstrong1992\\ZplImageToolBox\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Armstrong1992\\ZplImageToolBox\\Tests\\": "tests/"
+    }
+  }
+}
