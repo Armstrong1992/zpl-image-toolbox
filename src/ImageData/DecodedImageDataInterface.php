@@ -9,12 +9,9 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-namespace Armstrong1992\ZplImageToolBox\Utils;
+namespace Armstrong1992\ZplImageToolBox\ImageData;
 
-/**
- * @internal
- */
-final class ZplUtils
+interface DecodedImageDataInterface
 {
-    public const string ZPL_GFA_TAG = '^GFA';
+
 }

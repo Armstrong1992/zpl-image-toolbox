@@ -9,7 +9,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-namespace Armstrong1992\ZplImageToolBox\Tests\Unit\Finder;
+namespace Armstrong1992\ZplImageToolBox\Tests\Unit\ImageData\Finder;
 
 use Armstrong1992\ZplImageToolBox\ImageData\Collection\EncodedImageDataCollection;
 use Armstrong1992\ZplImageToolBox\ImageData\EncodedImageData;
@@ -144,6 +144,7 @@ final class GfaFinderTest extends TestCase
     ): EncodedImageData
     {
         return new EncodedImageData(
+            '^GFA',
             $data,
             $imageDataLength,
             $imageRowLength

@@ -15,11 +15,10 @@ use Armstrong1992\ZplImageToolBox\ImageData\Collection\EncodedImageDataCollectio
 use Armstrong1992\ZplImageToolBox\ImageData\EncodedImageData;
 use Armstrong1992\ZplImageToolBox\ImageData\Finder\Exception\ImageDataFinderException;
 use Armstrong1992\ZplImageToolBox\Utils\StringUtils;
+use Armstrong1992\ZplImageToolBox\Utils\ZplUtils;
 
 final class GfaFinder implements ImageDataFinderInterface
 {
-    private const string SUPPORTED_ZPL_TAG = '^GFA';
-
     public function findInData(mixed $data): EncodedImageDataCollection
     {
         if (!$this->supports($data)) {
@@ -45,6 +44,7 @@ final class GfaFinder implements ImageDataFinderInterface
             if (strlen($imageData) === $imageDataParameters['data_length']) {
                 $encodedImageData->add(
                     new EncodedImageData(
+                        ZplUtils::ZPL_GFA_TAG,
                         $imageData,
                         $imageDataParameters['image_data_length'],
                         $imageDataParameters['image_row_length']
@@ -127,6 +127,6 @@ final class GfaFinder implements ImageDataFinderInterface
 
     private function getEscapedZplTag(): string
     {
-        return preg_quote(self::SUPPORTED_ZPL_TAG, '/');
+        return preg_quote(ZplUtils::ZPL_GFA_TAG, '/');
     }
 }

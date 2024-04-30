@@ -11,15 +11,13 @@ declare(strict_types=1);
 
 namespace Armstrong1992\ZplImageToolBox\Utils;
 
+/**
+ * @internal
+ */
 final class StringUtils
 {
     public static function stripWhiteChars(string $inString): string
     {
         return preg_replace('/\s+/', '', trim($inString));
-    }
-
-    public static function escape()
-    {
-
     }
 }

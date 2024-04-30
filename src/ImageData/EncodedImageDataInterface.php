@@ -14,4 +14,5 @@ namespace Armstrong1992\ZplImageToolBox\ImageData;
 interface EncodedImageDataInterface
 {
 
+    public function zplCodeTag(): string;
 }

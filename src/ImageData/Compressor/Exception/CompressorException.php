@@ -9,12 +9,11 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-namespace Armstrong1992\ZplImageToolBox\Utils;
+namespace Armstrong1992\ZplImageToolBox\ImageData\Compressor\Exception;
 
-/**
- * @internal
- */
-final class ZplUtils
+use Armstrong1992\ZplImageToolBox\Exception\ZplException;
+
+final class CompressorException extends \Exception implements ZplException
 {
-    public const string ZPL_GFA_TAG = '^GFA';
+
 }

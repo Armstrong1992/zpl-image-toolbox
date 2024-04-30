@@ -14,11 +14,17 @@ namespace Armstrong1992\ZplImageToolBox\ImageData;
 final class EncodedImageData implements EncodedImageDataInterface
 {
     public function __construct(
+        private string $zplCodeTag,
         private string $data,
         private int    $imageDataLength,
         private int    $imageRowLength
     )
     {
 
+    }
+
+    public function zplCodeTag(): string
+    {
+        return $this->zplCodeTag;
     }
 }
