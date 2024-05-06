@@ -38,6 +38,6 @@
     }
   },
   "archive": {
-    "exclude": ["tests", ".ddev", ".idea"]
+    "exclude": ["tests", ".ddev", ".idea", "phpunit.xml.dist", ".gitignore"]
   }
 }
