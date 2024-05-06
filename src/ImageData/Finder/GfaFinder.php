@@ -41,16 +41,14 @@ final class GfaFinder implements ImageDataFinderInterface
 
             $imageData = substr($imageDataChunk, $imageDataParameters['data_start_offset'], $imageDataParameters['data_length']);
 
-            if (strlen($imageData) === $imageDataParameters['data_length']) {
-                $encodedImageData->add(
-                    new EncodedImageData(
-                        ZplUtils::ZPL_GFA_TAG,
-                        $imageData,
-                        $imageDataParameters['image_data_length'],
-                        $imageDataParameters['image_row_length']
-                    )
-                );
-            }
+            $encodedImageData->add(
+                new EncodedImageData(
+                    ZplUtils::ZPL_GFA_TAG,
+                    $imageData,
+                    $imageDataParameters['image_data_length'],
+                    $imageDataParameters['image_row_length']
+                )
+            );
         }
 
         return $encodedImageData;

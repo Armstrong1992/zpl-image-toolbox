@@ -12,9 +12,10 @@ declare(strict_types=1);
 namespace Armstrong1992\ZplImageToolBox\ImageData\Collection;
 
 use Armstrong1992\ZplImageToolBox\ImageData\EncodedImageDataInterface;
+use Traversable;
 use function count;
 
-final class EncodedImageDataCollection implements \Countable
+final class EncodedImageDataCollection implements \Countable, \IteratorAggregate
 {
     /**
      * @var EncodedImageDataInterface[]
@@ -29,5 +30,10 @@ final class EncodedImageDataCollection implements \Countable
     public function add(EncodedImageDataInterface $encodedImageData): void
     {
         $this->data[] = $encodedImageData;
+    }
+
+    public function getIterator(): Traversable
+    {
+        return new \ArrayIterator($this->data);
     }
 }
