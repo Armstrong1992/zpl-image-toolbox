@@ -36,5 +36,8 @@
     "psr-4": {
       "Armstrong1992\\ZplImageToolBox\\Tests\\": "tests/"
     }
+  },
+  "archive": {
+    "exclude": ["tests", ".ddev", ".idea"]
   }
 }
