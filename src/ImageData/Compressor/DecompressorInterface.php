@@ -18,7 +18,7 @@ interface DecompressorInterface
     /**
      * @throws CompressorException
      */
-    public function decompress(string $compressedData): string;
+    public function decompress(string $compressedData, int $imageDataSize, int $imageDataRowSize): string;
 
     public function supports(string $compressedData): bool;
 }

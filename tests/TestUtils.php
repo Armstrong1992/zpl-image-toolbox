@@ -19,4 +19,9 @@ final class TestUtils
     {
         return file_get_contents(self::ASSETS_DIR.'/test_labels/'.$filename);
     }
+
+    public static function getReferenceImagePath(string $filename): string
+    {
+        return self::ASSETS_DIR.'/test_labels/images/'.$filename;
+    }
 }

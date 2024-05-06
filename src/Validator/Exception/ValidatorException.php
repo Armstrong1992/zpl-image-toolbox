@@ -9,13 +9,11 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE file.
  */
 
-namespace Armstrong1992\ZplImageToolBox\ImageData;
+namespace Armstrong1992\ZplImageToolBox\Validator\Exception;
 
-interface DecodedImageDataInterface
+use Armstrong1992\ZplImageToolBox\Exception\ZplException;
+
+final class ValidatorException extends \Exception implements ZplException
 {
 
-    public function data(): string;
-
-    public function imageDataSize(): int;
-    public function imageDataRowSize(): int;
 }

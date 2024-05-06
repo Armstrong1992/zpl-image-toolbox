@@ -11,21 +11,21 @@ declare(strict_types=1);
 
 namespace Armstrong1992\ZplImageToolBox\ImageData;
 
-final class EncodedImageData implements EncodedImageDataInterface
+use Armstrong1992\ZplImageToolBox\Validator\Exception\ValidatorException;
+use Armstrong1992\ZplImageToolBox\Validator\ImageDataValidator;
+
+final class DecodedImageData implements DecodedImageDataInterface
 {
+    /**
+     * @throws ValidatorException
+     */
     public function __construct(
-        private string $zplCodeTag,
         private string $data,
         private int    $imageDataSize,
         private int    $imageDataRowSize
     )
     {
-
-    }
-
-    public function zplCodeTag(): string
-    {
-        return $this->zplCodeTag;
+        (new ImageDataValidator($this->data, $this->imageDataSize))->validate();
     }
 
     public function data(): string

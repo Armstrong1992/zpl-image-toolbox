@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Armstrong1992\ZplImageToolBox\ImageData\Collection;
 
 use Armstrong1992\ZplImageToolBox\ImageData\EncodedImageDataInterface;
+use function count;
 
 final class EncodedImageDataCollection implements \Countable
 {
@@ -22,7 +23,7 @@ final class EncodedImageDataCollection implements \Countable
 
     public function count(): int
     {
-        return \count($this->data);
+        return count($this->data);
     }
 
     public function add(EncodedImageDataInterface $encodedImageData): void

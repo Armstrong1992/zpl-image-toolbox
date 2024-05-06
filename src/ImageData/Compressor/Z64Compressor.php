@@ -18,7 +18,7 @@ final class Z64Compressor implements DecompressorInterface
     private const string DATA_PREFIX      = ':Z64:';
     private const int    ZLIB_DATA_OFFSET = 2;
 
-    public function decompress(string $compressedData): string
+    public function decompress(string $compressedData, int $imageDataSize, int $imageDataRowSize): string
     {
         if (!$this->supports($compressedData)) {
             throw new CompressorException('Provided compressed data is not supported by this decompressor.');

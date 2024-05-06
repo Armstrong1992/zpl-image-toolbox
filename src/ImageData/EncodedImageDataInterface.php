@@ -15,4 +15,9 @@ interface EncodedImageDataInterface
 {
 
     public function zplCodeTag(): string;
+
+    public function data(): string;
+
+    public function imageDataSize(): int;
+    public function imageDataRowSize(): int;
 }
