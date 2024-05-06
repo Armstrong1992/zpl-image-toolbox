@@ -24,7 +24,9 @@ final class Z64Compressor implements DecompressorInterface
             throw new CompressorException('Provided compressed data is not supported by this decompressor.');
         }
 
-        $compressedData = substr($compressedData, strlen(self::DATA_PREFIX));
+        $compressedData      = substr($compressedData, strlen(self::DATA_PREFIX));
+        $endOfCompressedData = strpos($compressedData, ':');
+        $compressedData      = substr($compressedData, 0, $endOfCompressedData !== false ? $endOfCompressedData : \strlen($compressedData));
 
         if (!$this->isBase64Encoded($compressedData)) {
             throw new CompressorException('Provided compressed data does not contain base64 encoded data.');
