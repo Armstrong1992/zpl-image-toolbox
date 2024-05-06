@@ -42,14 +42,7 @@ final class Z64Compressor implements DecompressorInterface
             throw new CompressorException('Unable to decompress ZLIB data.');
         }
 
-        $uncompressedDataLength = strlen($uncompressed);
-        $uncompressedData       = '';
-
-        for ($i = 0; $i < $uncompressedDataLength; $i++) {
-            $uncompressedData .= bin2hex($uncompressed[$i]);
-        }
-
-        return $uncompressedData;
+        return bin2hex($uncompressed);
     }
 
     public function supports(string $compressedData): bool

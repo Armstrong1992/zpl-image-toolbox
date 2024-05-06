@@ -68,7 +68,7 @@ final class Z64CompressorTest extends TestCase
 
         $decompressed = $z64Decompressor->decompress($compressedData, $imageDataSize, $imageDataRowSize);
 
-        $this->assertEquals($expectedHexResult, bin2hex($decompressed));
+        $this->assertEquals(strtolower($expectedHexResult), strtolower($decompressed));
 
     }
 
